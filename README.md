@@ -6,8 +6,12 @@ done as an exercise in dockering.
 
 ## Running
 
-````
+```
 cd mbot-docker
-docker build ticklemynausea/mbot .
-docker run ticklemynausea/mbot
-````
+docker build . -t mbot
+docker volume create mbot-vol
+
+# copy mbot-conf files into the newly created volume
+
+docker run -v mbot-vol:/vol:rw -d mbot:latest
+```

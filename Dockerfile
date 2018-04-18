@@ -1,14 +1,19 @@
 FROM ubuntu
 
 # Copy stuff
-COPY mbot-config /tmp/mbot-config
-COPY provision.sh /tmp
+COPY provision/* /tmp/
 
 # Provision the machine
-RUN /tmp/provision.sh
+RUN /tmp/pre-setup.sh
+RUN /tmp/install_popen-noshell.sh
+RUN /tmp/install_easycurl.sh
+RUN /tmp/install_mbot.sh
+RUN /tmp/install_mbot-shell.sh
+RUN /tmp/post-setup.sh
 
 USER mbot
 ENV HOME /home/mbot
+ENV PYTHONIOENCODING utf-8
 
-WORKDIR /home/mbot/mbot
-CMD [ "./mbot", "-d" ]
+WORKDIR /vol
+ENTRYPOINT [ "/usr/local/bin/mbot", "-d" ]

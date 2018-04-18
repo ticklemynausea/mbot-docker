@@ -1,0 +1,5 @@
+TMP_DIR=/tmp
+BUILD_HOME=/home/mbot
+BUILD_DIR=$BUILD_HOME/mbot
+MBOT_SHELL_DIR=$BUILD_HOME/mbot-shell
+MBOT_HOME=/vol
