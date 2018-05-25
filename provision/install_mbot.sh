@@ -9,7 +9,7 @@ ldconfig
 mkdir -p $TMP_DIR/mbot
 git clone https://github.com/ticklemynausea/mbot $TMP_DIR/mbot
 cd $TMP_DIR/mbot
-wget http://mirage.theunixplace.com/mbot/sources/alice.tgz
+wget https://s3-eu-west-1.amazonaws.com/ticklemynausea/sources/alice.tgz
 tar xfvz alice.tgz
 ./configure
 make
