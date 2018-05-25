@@ -17,4 +17,4 @@ apt-get -y install git build-essential autoconf \
     python-pip
 
 # install python packages
-pip install feedparser requests pylast
+pip install feedparser requests pylast beautifulsoup
